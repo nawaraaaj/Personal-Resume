@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #f6f2ea;
+  --color-surface: #efe9dd;
+  --color-ink: #231f1b;
+  --color-muted: #70685d;
+  --color-line: #ddd5c6;
+  --color-accent: #b7791f;
+  --color-accent-dark: #8f5d17;
+
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-canvas text-ink font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+}
