@@ -1,6 +1,7 @@
 import Button from '../components/ui/Button'
-import SocialLinks from '../components/ui/SocialLink'
+import Marker from '../components/ui/Marker'
 
+import SocialLinks from '../components/ui/SocialLink'
 import { site } from '../data/site'
 
 export default function Home() {
@@ -13,33 +14,14 @@ export default function Home() {
           className="mx-auto w-full max-w-sm md:max-w-lg"
         />
 
-        <div>
-          <p className="text-sm font-medium uppercase tracking-[0.25em] text-accent">
-            Hello!
-          </p>
+        <div className="font-nunito">
+          <p className="text-xl font-light uppercase text-accent">Hello!</p>
 
-          <h1 className="mt-3 text-5xl font-semibold tracking-tight md:text-6xl">
-            I'm{' '}
-            <span className="relative inline-block">
-              {site.name}
-              <svg
-                className="absolute -bottom-3 left-0 h-3 w-full text-accent"
-                viewBox="0 0 200 12"
-                preserveAspectRatio="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M2 8 C 40 2, 100 12, 198 4"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="5"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>
+          <h1 className="mb-4 mt-2 animate-fade-left text-[length:calc(1.375rem+1.5vw)] font-extrabold leading-[1.2] min-[1200px]:text-[2.5rem] motion-reduce:animate-none">
+            I'm {site.firstname} <Marker>{site.lastname}</Marker>
           </h1>
 
-          <p className="mt-8 text-2xl text-muted">{site.role}</p>
+          <p className="mt-10 text-xl text-ink">{site.role}</p>
 
           <SocialLinks className="mt-6" />
 

@@ -1,4 +1,5 @@
 import { site } from "../../data/site";
+import SocialLinks from "../ui/SocialLink";
 
 export default function Footer() {
   return (
@@ -7,33 +8,7 @@ export default function Footer() {
         <p>
           © {new Date().getFullYear()} {site.name}
         </p>
-        <ul className="flex gap-6">
-          <li>
-            <a
-              href={site.github}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-accent"
-            >
-              GitHub
-            </a>
-          </li>
-          <li>
-            <a
-              href={site.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-accent"
-            >
-              LinkedIn
-            </a>
-          </li>
-          <li>
-            <a href={`mailto:${site.email}`} className="hover:text-accent">
-              Email
-            </a>
-          </li>
-        </ul>
+        <SocialLinks />
       </div>
     </footer>
   );
