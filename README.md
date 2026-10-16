@@ -1,75 +1,86 @@
-# React + TypeScript + Vite
+# Nawaraj Neupane | Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio website of Nawaraj, a .NET backend developer based in Kathmandu, Nepal.
 
-Currently, two official plugins are available:
+Live site: https://neupanenawaraj.com.np
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- React 19 with TypeScript
+- Vite
+- Tailwind CSS v4
+- React Router (multi-page layout with a shared Navbar and Footer)
+- EmailJS (contact form)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Pages
 
-## Expanding the ESLint configuration
+- Home: introduction with photo, role, and links to projects and CV
+- Skills: technical skills grouped by area (backend, data, architecture, tools)
+- Experience: internship and traineeship timeline with key responsibilities
+- Projects: project list with a detail page for each project
+- Contact: contact form and social links
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Project Structure
 
 ```
+src/
+  components/
+    layout/    Layout, Navbar, Footer, ScrollToTop
+    ui/        Button and other reusable components
+  data/        site details, projects, skills, experience
+  pages/       Home, Experience, Skills, Projects, Contact
+  App.tsx      route definitions
+  main.tsx     app entry point
+  index.css    Tailwind import and theme colors/fonts
+public/        profile photo and CV PDF
+```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Content lives in `src/data/`, so adding a project or changing personal details means editing a data file, not the components.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Requirements: Node.js 18 or newer.
+
+```bash
+git clone <repository-url>
+cd personal-resume
+npm install
+npm run dev
+```
+
+The site runs at http://localhost:5173.
+
+## Environment Variables
+
+Create a `.env` file in the project root (never commit it):
 
 ```
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+## Scripts
+
+- `npm run dev` starts the development server
+- `npm run build` creates the production build in `dist/`
+- `npm run preview` previews the production build locally
+- `npm run lint` runs ESLint
+
+## Customization
+
+- Personal details, links and CV path: `src/data/site.ts`
+- Colors and fonts: the `@theme` block in `src/index.css`
+- Profile photo: `public/profile.jpg`
+- CV file: `public/Nawaraj_CV.pdf`
+
+## Deployment
+
+The site is deployed at https://neupanenawaraj.com.np.
+
+It builds to static files in `dist/`. Because it is a single-page app with client-side routing, the host must redirect all routes to `index.html`, otherwise refreshing a page such as `/projects` returns a 404.
+
+## License
+
+All rights reserved. The source is shown for reference only.
