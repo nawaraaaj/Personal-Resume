@@ -1,6 +1,6 @@
 # Nawaraj Neupane | Portfolio
 
-Personal portfolio website of Nawaraj, a .NET backend developer based in Kathmandu, Nepal.
+Personal portfolio website
 
 Live site: https://neupanenawaraj.com.np
 
