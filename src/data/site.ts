@@ -8,5 +8,5 @@ export const site = {
   email: 'nawarajneupane2003@gmail.com',
   github: 'https://github.com/nawaraaaj',
   linkedin: 'https://www.linkedin.com/in/nawaraj-neupane-8977a32a8',
-  cv: '/Nawaraj_CV.pdf',
+  cv: import.meta.env.VITE_CV_URL || '/cv.pdf',
 }

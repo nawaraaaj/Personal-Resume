@@ -1,8 +1,8 @@
-import Button from '../components/ui/Button'
-import Marker from '../components/ui/Marker'
+import Button from "../components/ui/Button";
+import Marker from "../components/ui/Marker";
 
-import SocialLinks from '../components/ui/SocialLink'
-import { site } from '../data/site'
+import SocialLinks from "../components/ui/SocialLink";
+import { site } from "../data/site";
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
         <div className="font-nunito">
           <p className="text-xl font-light uppercase text-accent">Hello!</p>
 
-          <h1 className="mb-4 mt-2 animate-fade-left text-[length:calc(1.375rem+1.5vw)] font-extrabold leading-[1.2] min-[1200px]:text-[2.5rem] motion-reduce:animate-none">
+          <h1 className="mb-4 mt-2 animate-fade-left font-nunito text-[length:calc(1.375rem+1.5vw)] font-extrabold leading-[1.2] min-[1200px]:text-[2.5rem] motion-reduce:animate-none">
             I'm {site.firstname} <Marker>{site.lastname}</Marker>
           </h1>
 
@@ -26,7 +26,7 @@ export default function Home() {
           <SocialLinks className="mt-6" />
 
           <div className="mt-10">
-            <Button href={site.cv} download>
+            <Button href={site.cv} target="_blank" rel="noopener noreferrer">
               Download CV ↓
             </Button>
           </div>
@@ -43,5 +43,5 @@ export default function Home() {
         <path d="M0 120 L0 70 C 240 10, 480 10, 720 60 C 960 110, 1200 110, 1440 50 L1440 120 Z" />
       </svg>
     </section>
-  )
+  );
 }
